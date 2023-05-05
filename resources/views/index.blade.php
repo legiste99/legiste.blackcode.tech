@@ -72,7 +72,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 text-left">
-                            <span class="wow customFadeInUp delay-0-4s slow" >© 2023 Black — All Rights Reserved.</span>
+                            <span class="wow customFadeInUp delay-0-4s slow" >© 2023 Blackcode — All Rights Reserved.</span>
                         </div>
                     </div>
                 </div>

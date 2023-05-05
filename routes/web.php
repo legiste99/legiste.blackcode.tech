@@ -33,6 +33,5 @@ Route::get('/blog', function () {
     return view('blog');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'viewContactForm'])->name('contact');
+Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'storeContactForm'])->name('contact.store');

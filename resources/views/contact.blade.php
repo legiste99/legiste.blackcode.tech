@@ -87,10 +87,14 @@
                         </div>
                     @endif
 
-                    <form action="{{asset('php/mail.php')}}" class="contact_form" method="POST" id="main_contact_form">
+                    <form action="{{route('contact.store')}}" class="contact_form" method="POST" id="main_contact_form">
+
                         <div class="alert alert-success contact_msg" style="display: none" role="alert">
                             Your message was sent successfully.
                         </div>
+
+                        {{ csrf_field() }}
+
                         <div class="form-group">
                             <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="required">
                         </div>
