@@ -1,9 +1,9 @@
 /* -----------------------------------------------
-				CSS Styles 
+				CSS Styles
 --------------------------------------------------
 
     Template Name: Elmiz - Personal Portfolio Template
-    
+
 --------------------------------------------------
 
 Table of Content
@@ -17,11 +17,11 @@ Table of Content
     - Works
     - Blog
     - Blog-single
-	- Contact 
-	- Preloader 
+	- Contact
+	- Preloader
     - Responsive
     - Dark
- 
+
 
 ----------------------------------- */
 /* -----------------------------------
@@ -1379,7 +1379,7 @@ ul {
 }
 
 /* ---------------------------------
-		Blog 
+		Blog
 --------------------------------- */
 .blog-item {
   padding: 30px;
@@ -1664,7 +1664,7 @@ ul {
 }
 
 /* ------------------------------
-		Contact 
+		Contact
 ------------------------------ */
 .contact-item {
   margin-bottom: 30px;
@@ -1716,8 +1716,21 @@ ul {
           box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
 }
 
+.contact_form_x {
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
+    box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
+}
+
 .contact_form .form-group {
   margin-bottom: 20px;
+}
+
+.contact_form_x .form-group {
+    margin-bottom: 20px;
 }
 
 .contact_form .form-control {
@@ -1732,6 +1745,18 @@ ul {
   transition: all 0.7s ease;
 }
 
+.contact_form_x .form-control {
+    background-color: transparent;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 16px;
+    color: #35404e;
+    display: inline-block;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}
+
 .contact_form .form-control:focus, .contact_form .form-control:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -1740,8 +1765,20 @@ ul {
           box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
 }
 
+.contact_form_x .form-control:focus, .contact_form_x .form-control:hover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #eee;
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
+    box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
+}
+
 .contact_form .form-control ::-moz-placeholder {
   color: #35404e !important;
+}
+
+.contact_form_x .form-control ::-moz-placeholder {
+    color: #35404e !important;
 }
 
 /* google-map */
@@ -1758,7 +1795,7 @@ ul {
 }
 
 /* -----------------------------
-		 Preloader 
+		 Preloader
 --------------------------------- */
 .loading {
   position: fixed;
@@ -1820,7 +1857,7 @@ ul {
 }
 
 /* ------------------------------
-		 Responsive 
+		 Responsive
 ------------------------------ */
 @media screen and (max-width: 991px) {
   .home-3:after,

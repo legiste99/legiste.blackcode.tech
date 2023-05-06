@@ -13,10 +13,10 @@
             <ul class="menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about" >About</a></li>
-                <li><a href="/#services">Services</a></li>
+                <li><a href="/services">Services</a></li>
                 <li><a href="#"><s>Portfolio</s></a></li>
-                <li><a href="/#"><s>Blog</s></a></li>
-                <li><a href="/#" class="active">Contact</a></li>
+                <li><a href="#"><s>Blog</s></a></li>
+                <li><a href="#" class="active">Contact</a></li>
             </ul>
         </nav>
         <!--hamburger-menu-->
@@ -46,7 +46,7 @@
                 <div class="col-lg-3 col-md-6">
                     <!--phone-->
                     <div class="contact-item ">
-                        <p><i class="fab fa-whatsapp base-color"></i> Phone: </p>
+                        <p><i class="fas fa-phone base-color"></i> Phone: </p>
                         <p><a href="tel:+27684834924">068 483 4924</a></p>
                     </div>
                 </div>
@@ -81,37 +81,94 @@
                 <!--form-->
                 <div class="col-lg-7 wow customFadeInUp slow" >
 
-                    @if(Session::has('success'))
-                        <div class="alert alert-success">
-                            {{Session::get('success')}}
+                    {{--@if(Session::has('success'))
+                        <div class="alert alert-success contact_msg" style="display: none" role="alert">
+                            {{ Session::get('success') }}
+                            @php
+                                Session::forget('success');
+                            @endphp
                         </div>
                     @endif
 
-                    <form action="{{route('contact.store')}}" class="contact_form" method="POST" id="main_contact_form">
-
-                        <div class="alert alert-success contact_msg" style="display: none" role="alert">
-                            Your message was sent successfully.
-                        </div>
+                    <form method="POST" action="{{route('email-sent')}}" class="contact_form" id="main_contact_form">
 
                         {{ csrf_field() }}
 
                         <div class="form-group">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="required">
+                            <input type="text" name="name" class="form-control" placeholder="Name" value="{{ old('name') }}">
+                            @if ($errors->has('name'))
+                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                            @endif
                         </div>
 
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="required">
+                            <input type="text" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
+                            @if ($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                            @endif
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject" required="required">
+                            <input type="text" name="subject" class="form-control" placeholder="Subject" value="{{ old('subject') }}">
+                            @if ($errors->has('subject'))
+                                <span class="text-danger">{{ $errors->first('subject') }}</span>
+                            @endif
                         </div>
 
                         <div class="form-group">
-                            <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Message" required="required"></textarea>
+                            <textarea name="message" cols="30" rows="5" class="form-control" placeholder="Message" > {{ old('message') }}</textarea>
+                            @if ($errors->has('message'))
+                                <span class="text-danger">{{ $errors->first('message') }}</span>
+                            @endif
                         </div>
 
                         <button type="submit" name="submit" class="btn-custom">Send Message</button>
+                    </form>
+                    --}}
+
+                    <form method="POST" action="{{route('email-sent')}}" class="contact_form_x" id="main_contact_form" onsubmit="document.getElementById('btn_submit').disabled=true;">
+
+                        @if(Session::has('success'))
+                            <div class="alert alert-success contact_msg" role="alert">
+                                {{ Session::get('success') }}
+                                @php
+                                    Session::forget('success');
+                                @endphp
+                            </div>
+                        @endif
+
+                        {{ csrf_field() }}
+
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Name" required="required" value="{{ old('name') }}">
+                            {{--@if ($errors->has('name'))
+                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                            @endif--}}
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Email" required="required" value="{{ old('email') }}">
+                            {{--@if ($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                            @endif--}}
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="subject" class="form-control" placeholder="Subject" required="required" value="{{ old('subject') }}">
+                            {{--@if ($errors->has('subject'))
+                                <span class="text-danger">{{ $errors->first('subject') }}</span>
+                            @endif--}}
+                        </div>
+
+                        <div class="form-group">
+                            <textarea name="message" cols="30" rows="5" class="form-control" placeholder="Message" required="required" > {{ old('message') }}</textarea>
+                            {{--@if ($errors->has('message'))
+                                <span class="text-danger">{{ $errors->first('message') }}</span>
+                            @endif--}}
+                        </div>
+
+                            <button type="submit" id="btn_submit" name="submit" class="btn-custom" >Send Message</button>
+
                     </form>
                 </div>
                 <!--google-map-->
@@ -124,9 +181,6 @@
             </div>
         </div>
     </div>
-{{--
-<div style="overflow:hidden;max-width:100%;width:500px;height:500px;"><div id="gmap-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Kraaifontein,+Cape+Town,+South+Africa&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="code-for-google-map" href="https://www.bootstrapskins.com/themes" id="enable-map-info">premium bootstrap themes</a><style>#gmap-canvas .text-marker{}.map-generator{max-width: 100%; max-height: 100%; background: none;</style></div>
---}}
 
     <!--loading -->
     <div class="loading">
@@ -134,6 +188,12 @@
     </div>
 
 <x-javascript/>
+
+{{--<script>
+    document.getElementById('btn_submit').onclick = function() {
+        alert("button was clicked");
+    };
+</script>--}}
 
 </body>
 
