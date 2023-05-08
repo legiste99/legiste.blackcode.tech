@@ -4,7 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <!-- favicon -->
-<link rel="icon" sizes="16x16" href="img/favicon.png">
+<link rel="icon" sizes="16x16" href="img/favicon.ico">
 
 <!-- Title -->
 <title>Legiste</title>

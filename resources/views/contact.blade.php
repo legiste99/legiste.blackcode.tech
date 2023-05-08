@@ -35,9 +35,22 @@
             <div class="row">
                 <div class="col-12">
                     <!--Section title-->
-                    <div class="section-heading">
+                    <div class="section-heading_contact">
                         <p class="section-description bg-base-color">Feel free to contact me</p>
                         <h2 class="section-title"> Contact Me</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-50 wow customFadeInUp slow ">
+                <div class="max-width-800 ml-auto mr-auto">
+                    <div class="about-info ">
+                        <p style="text-align: center">
+                            I am excited to embark on new projects and contribute my skills to innovative ventures.
+                            Whether you have an idea you'd like to bring to life or need assistance in optimizing your
+                            digital presence, I am here to help. Let's collaborate and create something exceptional
+                            together!
+                        </p>
                     </div>
                 </div>
             </div>
@@ -67,7 +80,7 @@
                 <div class="col-lg-3 col-md-6">
                     <!--social-icons-->
                     <div class="contact-item">
-                        <p><i class="fas fa-share-alt base-color"></i>Socials media: </p>
+                        <p><i class="fas fa-share-alt base-color"></i>Social media: </p>
                         <ul class="social-icons list-inline">
                             <li><a href="https://www.facebook.com/legiste.ndabashinze/" target="_blank"><i class="fab fa-facebook"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/legiste-ndabashinze-06920b209/" target="_blank"> <i class="fab fa-linkedin"></i></a></li>
@@ -81,51 +94,6 @@
                 <!--form-->
                 <div class="col-lg-7 wow customFadeInUp slow" >
 
-                    {{--@if(Session::has('success'))
-                        <div class="alert alert-success contact_msg" style="display: none" role="alert">
-                            {{ Session::get('success') }}
-                            @php
-                                Session::forget('success');
-                            @endphp
-                        </div>
-                    @endif
-
-                    <form method="POST" action="{{route('email-sent')}}" class="contact_form" id="main_contact_form">
-
-                        {{ csrf_field() }}
-
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Name" value="{{ old('name') }}">
-                            @if ($errors->has('name'))
-                                <span class="text-danger">{{ $errors->first('name') }}</span>
-                            @endif
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
-                            @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
-                            @endif
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" name="subject" class="form-control" placeholder="Subject" value="{{ old('subject') }}">
-                            @if ($errors->has('subject'))
-                                <span class="text-danger">{{ $errors->first('subject') }}</span>
-                            @endif
-                        </div>
-
-                        <div class="form-group">
-                            <textarea name="message" cols="30" rows="5" class="form-control" placeholder="Message" > {{ old('message') }}</textarea>
-                            @if ($errors->has('message'))
-                                <span class="text-danger">{{ $errors->first('message') }}</span>
-                            @endif
-                        </div>
-
-                        <button type="submit" name="submit" class="btn-custom">Send Message</button>
-                    </form>
-                    --}}
-
                     <form method="POST" action="{{route('email-sent')}}" class="contact_form_x" id="main_contact_form" onsubmit="document.getElementById('btn_submit').disabled=true;">
 
                         @if(Session::has('success'))
@@ -136,6 +104,10 @@
                                 @endphp
                             </div>
                         @endif
+
+                            <div class="alert alert-success contact_msg" role="alert">
+                                <p>Hi, our mailing services are temporarily unavailable. Please feel free to contact me directly using the email provided above. Thank you for your understanding.</p>
+                            </div>
 
                         {{ csrf_field() }}
 
@@ -167,7 +139,7 @@
                             @endif--}}
                         </div>
 
-                            <button type="submit" id="btn_submit" name="submit" class="btn-custom" >Send Message</button>
+                            <button type="submit" id="btn_submit" name="submit" class="btn-custom"  disabled >Send Message</button>
 
                     </form>
                 </div>

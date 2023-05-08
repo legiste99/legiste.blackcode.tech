@@ -45,14 +45,20 @@
             <div class="row d-flex align-items-center mb-50 wow customFadeInUp slow">
                 <div class="col-lg-7 ">
                     <div class="about-info">
-                        <h5>I'm Legiste Ndabashinze, an Applications Developer Graduate from the Cape Peninsula University of Technology</h5>
-                        <p>I am a freelancer based in the South Africa and i have been building noteworthy UX/UI designs and websites for years,
-                                which comply with the latest design trends.</p>
+                        <h5>I'm Legiste Ndabashinze, an Applications Developer Graduate from the Cape Peninsula
+                            University of Technology</h5>
+                        <p>
+                            My expertise lies in both web development and software development, with a particular
+                            focus on Android applications. I love the challenge of transforming ideas into intuitive,
+                            user-friendly experiences that seamlessly blend functionality and aesthetics. Whether it's
+                            crafting elegant websites or developing innovative mobile apps, I thrive on bringing digital
+                            solutions to life.
+                        </p>
                         <div class="g-listes">
                             <ul class="liste">
                                 <li><span>Name:</span>Legiste Ndabashinze.</li>
                                 <li><span>Phone:</span>068 483 4927.</li>
-                                <li><span>Freelancer:</span>Available.</li>
+                                <li><span>Open to work:</span>Yes.</li>
                             </ul>
                             <ul class="liste">
                                 <li><span>Email:</span>legistendabashinze@gmail.com</li>
